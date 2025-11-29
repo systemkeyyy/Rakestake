@@ -6,6 +6,7 @@ import (
 )
 
 func StartServer() {
+    router := SetupRouter()
     log.Println("Rakebet Backend Started on :8080")
-    http.ListenAndServe(":8080", nil)
+    log.Fatal(http.ListenAndServe(":8080", router))
 }
