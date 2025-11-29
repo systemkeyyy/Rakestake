@@ -1,0 +1,3 @@
+package dice
+
+// Dice logic

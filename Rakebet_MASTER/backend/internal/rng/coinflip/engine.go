@@ -1,0 +1,3 @@
+package coinflip
+
+// Coinflip logic

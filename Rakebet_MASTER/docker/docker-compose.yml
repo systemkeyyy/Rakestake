@@ -1,0 +1,39 @@
+
+version: '3.9'
+
+services:
+  backend:
+    build: ./backend
+    container_name: rake_backend
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - redis
+
+  frontend:
+    build: ./frontend
+    container_name: rake_frontend
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./frontend/.env
+    depends_on:
+      - backend
+
+  redis:
+    image: redis:7
+    container_name: rake_redis
+    ports:
+      - "6379:6379"
+
+  nginx:
+    build: ./nginx
+    container_name: rake_nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - frontend
+      - backend

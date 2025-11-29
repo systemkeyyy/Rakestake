@@ -1,0 +1,3 @@
+# RNG Fairness Model
+
+Provably fair explanation...

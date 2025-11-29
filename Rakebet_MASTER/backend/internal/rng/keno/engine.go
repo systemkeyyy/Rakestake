@@ -1,0 +1,3 @@
+package keno
+
+// Keno logic

@@ -1,0 +1,14 @@
+
+#cloud-config
+package_update: true
+package_upgrade: true
+
+packages:
+  - postgresql
+  - postgresql-contrib
+
+runcmd:
+  - systemctl enable postgresql
+  - systemctl start postgresql
+  - sudo -u postgres psql -c "CREATE USER rakebet WITH PASSWORD 'StrongPass123';"
+  - sudo -u postgres psql -c "CREATE DATABASE rakebet OWNER rakebet;"

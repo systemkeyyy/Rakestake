@@ -1,0 +1,21 @@
+
+#cloud-config
+package_update: true
+package_upgrade: true
+
+packages:
+  - docker.io
+  - docker-compose
+  - ufw
+  - fail2ban
+
+runcmd:
+  - ufw allow ssh
+  - ufw allow 80
+  - ufw allow 443
+  - ufw --force enable
+  - systemctl enable docker
+  - systemctl start docker
+  - mkdir -p /srv/rakebet
+  - cd /srv/rakebet
+  - docker-compose up -d
