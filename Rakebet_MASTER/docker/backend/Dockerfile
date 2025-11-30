@@ -1,7 +1,8 @@
 
 FROM golang:1.22
 WORKDIR /app
-COPY ../../backend ./
+COPY backend ./
+RUN go mod download
 RUN go mod tidy
 RUN go build -o server ./cmd/server/main.go
 CMD ["./server"]

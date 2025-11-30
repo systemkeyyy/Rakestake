@@ -1,7 +1,8 @@
 
 FROM node:20
 WORKDIR /app
-COPY ../../frontend ./
+COPY frontend/package*.json ./
 RUN npm install
+COPY frontend ./
 RUN npm run build
 CMD ["npm", "start"]

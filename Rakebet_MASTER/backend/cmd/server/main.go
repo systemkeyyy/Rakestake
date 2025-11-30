@@ -1,6 +1,6 @@
 package main
 
-import "backend/internal/core"
+import "rakebet/backend/internal/core"
 
 func main() {
     core.StartServer()
