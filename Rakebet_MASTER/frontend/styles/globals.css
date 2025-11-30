@@ -1,8 +1,33 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html.dark {
-  background-color: #0a0a0a;
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --background: #0a0e27;
+  --foreground: #ffffff;
+  --primary: #00ff88;
+  --secondary: #1e293b;
+  --accent: #8b5cf6;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Funnel Sans', system-ui, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.btn-primary {
+  @apply bg-primary text-background px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-foreground px-6 py-3 rounded-lg font-semibold hover:bg-opacity-80 transition-all;
 }
